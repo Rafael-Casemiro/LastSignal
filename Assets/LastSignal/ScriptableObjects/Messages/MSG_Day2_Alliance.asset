@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Day2_Alliance
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: "R\xC1DIO ALFA-7"
+  senderDisplayName: GRUPO ALFA-7
+  messageType: 0
+  messageText: "Aqui \xE9 o Grupo Alfa-7. Temos \xE1gua. Voc\xEAs t\xEAm combust\xEDvel.
+    Podemos trocar. Interessados?"
+  choices:
+  - choiceText: "Trocar 20 \xC1gua por 15 Combust\xEDvel"
+    consequences:
+    - type: 0
+      targetId: Water
+      value: 20
+    - type: 1
+      targetId: Fuel
+      value: 15
+  - choiceText: Recusar a proposta
+    consequences:
+    - type: 1
+      targetId: Credits
+      value: 0
+  requiredDay: 1
+  triggerChance: 1

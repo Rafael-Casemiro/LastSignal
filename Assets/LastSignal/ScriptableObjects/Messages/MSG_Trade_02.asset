@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Trade_02
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: MARCIO_S
+  senderDisplayName: "M\xC1RCIO \u2014 REDE SUL"
+  messageType: 0
+  messageText: "Escuta. Algu\xE9m est\xE1 comprando TUDO no mercado. Pre\xE7os v\xE3o
+    triplicar amanh\xE3. Compre agora ou se arrependa."
+  choices:
+  - choiceText: "Comprar estoque de comida emergencial. (\u2212500 CR, +60 Comida)"
+    consequences:
+    - type: 1
+      targetId: Credits
+      value: 500
+    - type: 0
+      targetId: Food
+      value: 60
+  - choiceText: "Ignorar o alerta. Parece manipula\xE7\xE3o de pre\xE7o."
+    consequences:
+    - type: 2
+      targetId: Traders
+      value: -5
+  requiredDay: 1
+  triggerChance: 1

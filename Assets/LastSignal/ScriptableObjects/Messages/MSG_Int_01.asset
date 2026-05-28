@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Int_01
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: SISTEMA
+  senderDisplayName: "RELAT\xD3RIO INTERNO"
+  messageType: 1
+  messageText: "Conflito entre grupos dentro do bunker. Dois sobreviventes feriram-se.
+    Media\xE7\xE3o necess\xE1ria."
+  choices:
+  - choiceText: Mediar o conflito. Distribuir responsabilidades.
+    consequences:
+    - type: 1
+      targetId: Medicine
+      value: 5
+  - choiceText: "Impor lei marcial tempor\xE1ria."
+    consequences:
+    - type: 2
+      targetId: Military
+      value: 10
+    - type: 2
+      targetId: Refugees
+      value: -15
+  requiredDay: 1
+  triggerChance: 1

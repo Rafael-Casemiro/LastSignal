@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Day7_RadiationStorm
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: SISTEMA
+  senderDisplayName: SENSOR EXTERNO
+  messageType: 1
+  messageText: "ALERTA N\xCDVEL 3: Tempestade de radia\xE7\xE3o detectada. Consumo
+    de energia triplicar\xE1 por 48h."
+  choices:
+  - choiceText: "Ativar geradores de emerg\xEAncia (\u221250 Combust\xEDvel)"
+    consequences:
+    - type: 1
+      targetId: Fuel
+      value: 50
+  - choiceText: "Desligar sistemas n\xE3o-essenciais. Modo hiberna\xE7\xE3o."
+    consequences:
+    - type: 1
+      targetId: Energy
+      value: 20
+  requiredDay: 1
+  triggerChance: 1

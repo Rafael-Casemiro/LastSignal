@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Day5_BlackMarket
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: SOMBRA
+  senderDisplayName: CONTATO DESCONHECIDO
+  messageType: 0
+  messageText: "Mercado paralelo ativo. Posso dobrar seus cr\xE9ditos \u2014 se topar
+    arriscar metade deles agora."
+  choices:
+  - choiceText: "Apostar 250 cr\xE9ditos (pode ganhar 250 ou perder tudo)"
+    consequences:
+    - type: 1
+      targetId: Credits
+      value: 250
+    - type: 0
+      targetId: Credits
+      value: 500
+  - choiceText: "Ignorar. N\xE3o confio em desconhecidos."
+    consequences:
+    - type: 1
+      targetId: Credits
+      value: 0
+  requiredDay: 1
+  triggerChance: 1

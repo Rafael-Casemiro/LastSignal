@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Under_01
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: PHANTASM
+  senderDisplayName: "PHANTASM \u2014 REDE UNDERGROUND"
+  messageType: 0
+  messageText: "Voc\xEA n\xE3o nos conhece. Mas sabemos tudo sobre voc\xEA. Temos
+    informa\xE7\xF5es que podem salvar seu bunker. Pre\xE7o: 300 cr\xE9ditos."
+  choices:
+  - choiceText: "Pagar pela informa\xE7\xE3o. (\u2212300 CR)"
+    consequences:
+    - type: 1
+      targetId: Credits
+      value: 300
+    - type: 2
+      targetId: UndergroundNetwork
+      value: 15
+  - choiceText: Recusar. Parece golpe.
+    consequences:
+    - type: 2
+      targetId: UndergroundNetwork
+      value: -10
+  requiredDay: 1
+  triggerChance: 1

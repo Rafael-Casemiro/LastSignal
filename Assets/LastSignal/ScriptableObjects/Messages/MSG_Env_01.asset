@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Env_01
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: SISTEMA
+  senderDisplayName: MONITOR AMBIENTAL
+  messageType: 3
+  messageText: "TEMPESTADE DE \xC1CIDO detectada. Ventila\xE7\xE3o externa comprometida.
+    Consumo de energia aumentar\xE1 40% por 2 dias."
+  choices:
+  - choiceText: "Ativar filtros de emerg\xEAncia. (\u221230 Energia)"
+    consequences:
+    - type: 1
+      targetId: Energy
+      value: 30
+  - choiceText: "Desligar ventila\xE7\xE3o parcial. Risco para a sa\xFAde."
+    consequences:
+    - type: 1
+      targetId: Medicine
+      value: 15
+  requiredDay: 1
+  triggerChance: 1

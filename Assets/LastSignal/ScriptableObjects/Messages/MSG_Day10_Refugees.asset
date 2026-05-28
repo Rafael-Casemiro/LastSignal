@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Day10_Refugees
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: "R\xC1DIO"
+  senderDisplayName: "TRANSMISS\xC3O P\xDABLICA"
+  messageType: 0
+  messageText: "47 refugiados na entrada do bunker. Sem comida h\xE1 3 dias. Pedem
+    abrigo."
+  choices:
+  - choiceText: "Aceitar 10 pessoas (\u221280 Comida, +for\xE7a de trabalho)"
+    consequences:
+    - type: 1
+      targetId: Food
+      value: 80
+    - type: 0
+      targetId: Credits
+      value: 150
+  - choiceText: "Oferecer apenas suprimentos e mand\xE1-los embora (\u221240 Comida)"
+    consequences:
+    - type: 1
+      targetId: Food
+      value: 40
+  - choiceText: Fechar as comportas. Recursos insuficientes.
+    consequences:
+    - type: 1
+      targetId: Credits
+      value: 0
+  requiredDay: 1
+  triggerChance: 1

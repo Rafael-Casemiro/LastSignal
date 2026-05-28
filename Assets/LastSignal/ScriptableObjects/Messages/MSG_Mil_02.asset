@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Mil_02
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: CORONEL VOSS
+  senderDisplayName: CORONEL VOSS
+  messageType: 0
+  messageText: "\xDAltimo aviso. Entregue os suprimentos ou declaramos o seu bunker
+    territ\xF3rio hostil."
+  choices:
+  - choiceText: "Ceder. Enviar suprimentos. (\u221250 Comida, \u221220 \xC1gua)"
+    consequences:
+    - type: 1
+      targetId: Food
+      value: 50
+    - type: 1
+      targetId: Water
+      value: 20
+    - type: 2
+      targetId: Military
+      value: 15
+  - choiceText: "Resistir. Cortar comunica\xE7\xE3o."
+    consequences:
+    - type: 2
+      targetId: Military
+      value: -30
+  requiredDay: 1
+  triggerChance: 1

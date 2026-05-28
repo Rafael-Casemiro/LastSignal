@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc04c0c8cc428643a7dc538b604715d, type: 3}
+  m_Name: MSG_Myst_01
+  m_EditorClassIdentifier: Assembly-CSharp::LastSignal.Data.MessageData
+  senderId: ???
+  senderDisplayName: "TRANSMISS\xC3O N\xC3O IDENTIFICADA"
+  messageType: 2
+  messageText: "... sobreviventes do Bunker Zeta... colapso iminente... se algu\xE9m
+    ouvir... ajuda..."
+  choices:
+  - choiceText: Tentar localizar a origem.
+    consequences:
+    - type: 1
+      targetId: Energy
+      value: 10
+  - choiceText: Ignorar. Pode ser armadilha.
+    consequences:
+    - type: 2
+      targetId: Refugees
+      value: -5
+  requiredDay: 1
+  triggerChance: 1
