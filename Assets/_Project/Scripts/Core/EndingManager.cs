@@ -88,7 +88,7 @@ namespace LastSignal.Core
                 TriggerEnding(EndingType.Survived,
                     "O prazo chegou ao fim.\nSeus sobreviventes resistiram.\nAlguns pagaram o preço. Outros verão o amanhã.\n\n[ FIM: SOBREVIVÊNCIA ]");
             else
-                TriggerEnding(EndingType.Isolated,
+                TriggerEnding(EndingType.Collapsed,
                     "Os recursos acabaram antes do tempo.\nO último sinal foi enviado às 03:14.\nNinguém respondeu.\n\n[ FIM: COLAPSO ]");
         }
 

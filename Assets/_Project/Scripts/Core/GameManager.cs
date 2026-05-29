@@ -67,6 +67,7 @@ namespace LastSignal.Core
                 EndingType.Sacrificed => "[ FIM: SACRIFÍCIO ]",
                 EndingType.Betrayed   => "[ FIM: DITADURA ]",
                 EndingType.Isolated   => "[ FIM: ISOLAMENTO ]",
+                EndingType.Collapsed  => "[ FIM: COLAPSO ]",
                 _ => "[ FIM ]"
             };
             GameOverScreen.Instance?.Show(title, message);
@@ -75,5 +76,5 @@ namespace LastSignal.Core
 
     public enum GameState { Playing, Paused, GameOver, Ending }
     public enum GameOverReason { ResourcesDepleted, ReputationCollapsed, TimedOut }
-    public enum EndingType { Survived, Sacrificed, Betrayed, Isolated }
+    public enum EndingType { Survived, Sacrificed, Betrayed, Isolated, Collapsed }
 }

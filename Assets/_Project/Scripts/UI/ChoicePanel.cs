@@ -36,18 +36,53 @@ namespace LastSignal.UI
                 var tmp = btn.GetComponentInChildren<TextMeshProUGUI>();
                 var button = btn.GetComponent<Button>();
 
-                if (tmp != null)
+                bool canAfford = true;
+                if (choice.consequences != null)
                 {
-                    tmp.text = $"> {choice.choiceText}";
-                    tmp.fontSize = 22; // Força o tamanho 18 via código
-                    
-                    // Aplica a cor verde do terminal para os botões de escolha
-                    if (ColorUtility.TryParseHtmlString("#4DFF4D", out var color))
-                        tmp.color = color;
+                    var resources = Core.GameManager.Instance?.Resources;
+                    if (resources != null)
+                    {
+                        foreach (var c in choice.consequences)
+                        {
+                            if (c.type == ConsequenceType.LoseResource)
+                            {
+                                if (Enum.TryParse<Core.CommodityType>(c.targetId, out var commodityType))
+                                {
+                                    if (resources.Get(commodityType) < c.value)
+                                    {
+                                        canAfford = false;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
 
-                var capturedChoice = choice;
-                button?.onClick.AddListener(() => OnButtonClicked(capturedChoice));
+                if (tmp != null)
+                {
+                    if (canAfford)
+                    {
+                        tmp.text = $"> {choice.choiceText}";
+                        // Aplica a cor verde do terminal para os botões de escolha
+                        if (ColorUtility.TryParseHtmlString("#4DFF4D", out var color))
+                            tmp.color = color;
+                    }
+                    else
+                    {
+                        tmp.text = $"> {choice.choiceText} [Recursos Insuficientes]";
+                        if (ColorUtility.TryParseHtmlString("#888888", out var color))
+                            tmp.color = color;
+                        if (button != null) button.interactable = false;
+                    }
+                    tmp.fontSize = 22; // Força o tamanho 18 via código
+                }
+
+                if (canAfford)
+                {
+                    var capturedChoice = choice;
+                    button?.onClick.AddListener(() => OnButtonClicked(capturedChoice));
+                }
 
                 _activeButtons.Add(btn);
             }

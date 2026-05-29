@@ -41,6 +41,11 @@ namespace LastSignal.UI
         public void Show(string title, string message)
         {
             gameObject.SetActive(true);
+            transform.SetAsLastSibling(); // Garante que a tela sobreponha o terminal
+
+            var img = GetComponent<UnityEngine.UI.Image>();
+            if (img != null) img.color = new Color(0, 0, 0, 1f); // Fundo totalmente preto
+
             if (canvasGroup != null)
             {
                 canvasGroup.interactable  = false;
