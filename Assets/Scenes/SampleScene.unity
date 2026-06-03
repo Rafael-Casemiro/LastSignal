@@ -3058,7 +3058,7 @@ MonoBehaviour:
   terminalUI: {fileID: 1147891813}
   choicePanel: {fileID: 1290571101}
   messageDatabase: []
-  interMessageDelay: 0.8
+  interMessageDelay: 2.5
   choiceRevealDelay: 0.5
 --- !u!1 &1272192515
 GameObject:

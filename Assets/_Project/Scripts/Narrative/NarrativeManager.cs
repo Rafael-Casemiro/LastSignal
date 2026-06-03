@@ -21,7 +21,7 @@ namespace LastSignal.Narrative
         [SerializeField] private MessageData[] messageDatabase;
 
         [Header("Timing")]
-        [SerializeField] private float interMessageDelay = 0.8f;
+        [SerializeField] private float interMessageDelay = 2.5f;
         [SerializeField] private float choiceRevealDelay = 0.5f;
 
         private Queue<MessageData> _messageQueue = new();
